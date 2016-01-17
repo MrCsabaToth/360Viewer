@@ -286,7 +286,7 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
     screenModelViewProjectionParam = GLES20.glGetUniformLocation(screenProgram, "u_MVP");
 
     GLES20.glEnableVertexAttribArray(screenPositionParam);
-    //GLES20.glEnableVertexAttribArray(screenNormalParam);
+    GLES20.glEnableVertexAttribArray(screenNormalParam);
     GLES20.glEnableVertexAttribArray(screenTextureCoordsParam);
 
     checkGLError("Screen program params");

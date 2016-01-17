@@ -229,12 +229,12 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
     float screenWidthHalf = screenWidth / 2.0f;
     float screenHeightHalf = screenHeight / 2.0f;
     float[] screenCoords = new float[] {
-      -screenWidthHalf,  screenHeightHalf, 0,
-      -screenWidthHalf, -screenHeightHalf, 0,
-       screenWidthHalf,  screenHeightHalf, 0,
-      -screenWidthHalf, -screenHeightHalf, 0,
-       screenWidthHalf, -screenHeightHalf, 0,
-       screenWidthHalf,  screenHeightHalf, 0,
+      -screenWidthHalf,  screenHeightHalf, 0.0f,
+      -screenWidthHalf, -screenHeightHalf, 0.0f,
+       screenWidthHalf,  screenHeightHalf, 0.0f,
+      -screenWidthHalf, -screenHeightHalf, 0.0f,
+       screenWidthHalf, -screenHeightHalf, 0.0f,
+       screenWidthHalf,  screenHeightHalf, 0.0f,
     };
 
     float[] screenTextureCoordinates = new float[] {
@@ -276,14 +276,14 @@ public class MainActivity extends CardboardActivity implements CardboardView.Ste
 
     checkGLError("Screen program");
 
-    screenModelParam = GLES20.glGetUniformLocation(screenProgram, "u_Model");
-    screenModelViewParam = GLES20.glGetUniformLocation(screenProgram, "u_MVMatrix");
-    screenModelViewProjectionParam = GLES20.glGetUniformLocation(screenProgram, "u_MVP");
-
     screenPositionParam = GLES20.glGetAttribLocation(screenProgram, "a_Position");
     screenNormalParam = GLES20.glGetAttribLocation(screenProgram, "a_Normal");
     screenTextureCoordsParam = GLES20.glGetAttribLocation(screenProgram, "a_TexCoordinate");
     screenTextureParam = GLES20.glGetUniformLocation(screenProgram, "u_Texture");
+
+    screenModelParam = GLES20.glGetUniformLocation(screenProgram, "u_Model");
+    screenModelViewParam = GLES20.glGetUniformLocation(screenProgram, "u_MVMatrix");
+    screenModelViewProjectionParam = GLES20.glGetUniformLocation(screenProgram, "u_MVP");
 
     GLES20.glEnableVertexAttribArray(screenPositionParam);
     //GLES20.glEnableVertexAttribArray(screenNormalParam);
